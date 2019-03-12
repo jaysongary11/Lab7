@@ -1,7 +1,7 @@
 
 import java.util.PriorityQueue;
 
-public class PriorityQueueHospital<PatientType>  extends Hospital
+public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital
 {
 	private PriorityQueue<PatientType> priorityQueue = new PriorityQueue<PatientType>();
 	
@@ -13,7 +13,7 @@ public class PriorityQueueHospital<PatientType>  extends Hospital
 	public PatientType nextPatient()
 	{
 		PatientType nextPatient = priorityQueue.peek();
-		return nextPatient();
+		return nextPatient;
 	}
 	
 	public PatientType treatNextPatient()
